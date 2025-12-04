@@ -11,9 +11,15 @@ function sport_pratique() {
     console.log(xml_doc.getElementsByTagName("sport_pratique"));
     for (idx_xml_question in xml_doc.getElementsByTagName("sport_pratique")) {
       console.log(idx_xml_question);
-      console.log(xml_doc[idx_xml_question].getAttribute("id"));
+      console.log(
+        xml_doc
+          .getElementsByTagName("sport_pratique")
+          [idx_xml_question].getAttribute("id"),
+      );
       var option = document.createElement("option", {
-        value: xml_doc[idx_xml_question].getAttribute("id").nodeValue,
+        value: xml_doc
+          .getElementsByTagName("sport_pratique")
+          [idx_xml_question].getAttribute("id").nodeValue,
       });
 
       element_to_show.appendChild(document.createElement(option));
