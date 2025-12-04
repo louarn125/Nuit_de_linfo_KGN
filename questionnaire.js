@@ -28,7 +28,7 @@ function load_xml_file() {
       console.log("pas neuille");
       let _xml_doc = xmlhttp.responseXML;
       console.log(_xml_doc);
-      return _xml_doc;
+      return _xml_doc.getElementsByTagName("data");
     } else {
       console.log("neuille");
     }
