@@ -9,7 +9,7 @@ function sport_pratique() {
 
     console.log(xml_doc);
     console.log(xml_doc.childNodes);
-
+    console.log(xml_doc.children.getElementsByTagName("sport_pratique"));
     for (xml_question in xml_doc.childNodes.getElementsByTagName(
       "sport_pratique",
     )) {
