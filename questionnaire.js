@@ -8,7 +8,7 @@ function sport_pratique() {
     element_to_show.hidden = false;
 
     console.log(xml_doc);
-    for (xml_question in xml_doc.childNodes.getElementByTagName(
+    for (xml_question in xml_doc.childNodes.getElementsByTagName(
       "sport_pratique",
     )) {
       var option = document.createElement("option", {
