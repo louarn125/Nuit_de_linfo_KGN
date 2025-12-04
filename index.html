@@ -39,9 +39,15 @@
                 </select>
             </div>
 
-            <div id="box_pratique_sport">
-                <label for="4"> Avez-vous déjà pratiquer un sport ? </label>
-                <input type="checkbox" aria-label="pratique_sport" id="4" />
+            <div onchange="sport_pratique()">
+                <label for="box_pratique_sport">
+                    Avez-vous déjà pratiquer un sport ?
+                </label>
+                <input
+                    type="checkbox"
+                    aria-label="pratique_sport"
+                    id="box_pratique_sport"
+                />
             </div>
             <div id="q_sport_pratique" hidden="true">
                 <label for="5"> Lequel ? </label>
