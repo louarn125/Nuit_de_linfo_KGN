@@ -14,7 +14,6 @@ class boule {
         this.v_x = 0;
         this.v_y = 0;
         this.color = color;
-        this.creer_boule()
         this.objet = document.getElementsByClassName("boule")[0];
     }
     move(){
