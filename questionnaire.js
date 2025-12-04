@@ -7,7 +7,7 @@ function sport_pratique() {
     let element_to_show = document.getElementById("q_sport_pratique");
     element_to_show.hidden = false;
 
-    console.log(xml_doc.getElementById("sport_pratique"));
+    //console.log(xml_doc.getElementById("sport_pratique"));
     console.log(xml_doc.getElementsByTagName("sport_pratique"));
     //console.log(xml_doc.childNodes.where((local_name = "sport_pratique")));
     //console.log(xml_doc.children.getElementsByTagName("sport_pratique"));
