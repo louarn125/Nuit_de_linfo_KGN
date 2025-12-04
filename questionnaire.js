@@ -10,18 +10,18 @@ function sport_pratique() {
     //console.log(xml_doc.getElementById("sport_pratique"));
     console.log(xml_doc.getElementsByTagName("sport_pratique"));
     for (idx_xml_question in xml_doc.getElementsByTagName("sport_pratique")) {
-      console.log(idx_xml_question);
-      console.log(
-        xml_doc
-          .getElementsByTagName("sport_pratique")
-          [idx_xml_question].getAttribute("id"),
-      );
+      // console.log(idx_xml_question);
+      // console.log(
+      //   xml_doc
+      //     .getElementsByTagName("sport_pratique")
+      //     [idx_xml_question].getAttribute("id"),
+      // );
       var option = document.createElement("option", {
         value: xml_doc
           .getElementsByTagName("sport_pratique")
           [idx_xml_question].getAttribute("id").nodeValue,
       });
-
+      console.log(option);
       element_to_show.appendChild(document.createElement(option));
     }
   } else {
