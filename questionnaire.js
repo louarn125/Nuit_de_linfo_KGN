@@ -26,13 +26,13 @@ function load_xml_file() {
       // j'ai un truc
       ready_htpp_request = true;
       console.log("pas neuille");
+      let _xml_doc = xmlhttp.responseXML;
+      console.log(_xml_doc);
+      return _xml_doc;
     } else {
       console.log("neuille");
     }
   };
   xmlhttp.open("GET", "https://louarn125.github.io/questions.xml", true);
   xmlhttp.send();
-  let _xml_doc = xmlhttp.responseXML;
-  console.log(_xml_doc);
-  return _xml_doc;
 }
