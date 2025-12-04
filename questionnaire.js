@@ -22,7 +22,7 @@ function sport_pratique() {
           [idx_xml_question].getAttribute("id"),
       });
       console.log(option);
-      element_to_show.appendChild(document.createElement(option));
+      element_to_show.appendChild(option);
     }
   } else {
     document.getElementById("q_sport_pratique").hidden = true;
