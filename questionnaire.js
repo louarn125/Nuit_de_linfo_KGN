@@ -25,6 +25,7 @@ function load_xml_file() {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
       // j'ai un truc
       ready_htpp_request = true;
+      console.log("pas neuille");
     } else {
       console.log("neuille");
     }
