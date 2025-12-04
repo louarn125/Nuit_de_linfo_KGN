@@ -31,7 +31,7 @@ def generate_xml(balise,data_path):
 
                 xml +="\t</" + key[balise_cursor] + ">\n"
         balise_cursor += 1
-    xml += "<data>"
+    xml += "</data>"
     return xml
 xml = generate_xml(balise,"data.txt")
 
