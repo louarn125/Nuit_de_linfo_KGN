@@ -17,6 +17,9 @@ class boule {
         this.creer_boule(x, y, rayon)
         this.objet = document.getElementsByClassName("boule")[0];
     }
+    actualiser() {
+        this.x = 
+    }
     move() {
         this.x += this.v_x;
         this.y += this.v_y;
