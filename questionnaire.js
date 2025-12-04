@@ -10,6 +10,8 @@ function sport_pratique() {
     //console.log(xml_doc.getElementById("sport_pratique"));
     console.log(xml_doc.getElementsByTagName("sport_pratique"));
     for (xml_question in xml_doc.getElementsByTagName("sport_pratique")) {
+      console.log(xml_question);
+      console.log(xmlquestion.getAttribute("id"));
       var option = document.createElement("option", {
         value: xml_question.getAttribute("id").nodeValue,
       });
