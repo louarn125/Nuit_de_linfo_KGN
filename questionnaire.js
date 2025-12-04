@@ -1,12 +1,13 @@
 let ready_htpp_request = false;
 let xml_doc = load_xml_file();
-//let xml_doc = new XMLDocument();
+console.log(xml_doc);
 
 function sport_pratique() {
   if (document.getElementById("box_pratique_sport").elements[0].checked) {
     let element_to_show = document.getElementById("q_sport_pratique");
     element_to_show.hidden = false;
 
+    console.log(xml_doc);
     for (xml_question in xml_doc.getElementByTagName("sport_pratique")) {
       var option = document.createElement("option", {
         value: xml_question.getAttribute("id"),
