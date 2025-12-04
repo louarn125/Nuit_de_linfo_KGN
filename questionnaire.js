@@ -3,9 +3,7 @@ let xml_doc;
 //console.log(xml_doc);
 
 function sport_pratique() {
-  console.log(document);
-  console.log(document.getElementById("box_pratique_sport"));
-  if (document.getElementById("box_pratique_sport").elements[0].checked) {
+  if (document.getElementById("box_pratique_sport").checked) {
     let element_to_show = document.getElementById("q_sport_pratique");
     element_to_show.hidden = false;
 
@@ -28,10 +26,7 @@ function load_xml_file() {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
       // j'ai un truc
       ready_htpp_request = true;
-      console.log("pas neuille");
       xml_doc = xmlhttp.responseXML.getElementsByTagName("data")[0];
-    } else {
-      console.log("neuille");
     }
   };
   xmlhttp.open("GET", "https://louarn125.github.io/questions.xml", true);
