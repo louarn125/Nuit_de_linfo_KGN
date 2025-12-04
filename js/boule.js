@@ -7,7 +7,7 @@ class boule {
      * @param {*} y coord axe y centre de la boule
      * @param {*} rayon rayon de la boule
      */
-    constructor(x, y, rayon) {
+    constructor(x, y, rayon, color) {
         this.rayon = rayon;
         this.x = x;
         this.y = y;
@@ -15,6 +15,7 @@ class boule {
         this.v_y = 0;
         this.color = color;
         this.creer_boule(x, y, rayon)
+        this.objet = document.getElementsByClassName("boule")[0];
     }
     move() {
         this.x += this.v_x;
