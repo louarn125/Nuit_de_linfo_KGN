@@ -29,6 +29,7 @@ function load_xml_file() {
   };
   xmlhttp.open("GET", "https://louarn125.github.io/questions.xml", true);
   xmlhttp.send();
+  console.log(xml_doc);
   let xml_doc = xmlhttp.responseXML;
   console.log(xml_doc);
   return xml_doc;
