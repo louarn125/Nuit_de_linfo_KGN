@@ -1,5 +1,5 @@
 let ready_htpp_request = false;
-let xml_doc = new XMLDocument();
+//let xml_doc = new XMLDocument();
 
 function sport_pratique() {
   if (document.getElementById("box_pratique_sport").elements[0].checked) {
@@ -25,6 +25,7 @@ function load_xml_file() {
     }
     xmlhttp.open("GET", "https://louarn125.github.io/questions.xml", true);
     xmlhttp.send();
-    xml_doc = xmlhttp.responseXML;
+    let xml_doc = xmlhttp.responseXML;
+    console.log(xml_doc);
   };
 }
