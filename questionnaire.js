@@ -81,8 +81,16 @@ function dynamic_charge_all() {
 }
 //code du nain
 function create_exercice(d_total, groupes, equipement) {
-
-  console.log(xml_doc);
+  console.log("roux");
+  let mouv_posible = [];
+  console.log(xml_doc.getElementsByTagName("mouvement"));
+  for (mouv in xml_doc.getElementsByTagName("mouvement")) {
+    console.log(xml_doc.getElementsByTagName("mouvement").getAttribute("matériel"));
+    if (equipement >= xml_doc.getElementsByTagName("mouvement")[mouv].textContent) {
+      mouv_posible.push(mouv);
+    }
+  }
+  console.log(mouv_posible);
 }
 
 
