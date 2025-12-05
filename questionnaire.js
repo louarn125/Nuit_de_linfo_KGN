@@ -19,7 +19,7 @@ function flip_flop_name(name) {
 }
 
 function append_childs(name_of_parent, elements_name) {
-  console.log("appenning");
+  //console.log("appenning");
   for (
     let idx_xml_question = 0;
     idx_xml_question < xml_doc.getElementsByTagName(elements_name).length;
@@ -34,11 +34,6 @@ function append_childs(name_of_parent, elements_name) {
         .getElementsByTagName(elements_name)
         [idx_xml_question].getElementsByTagName("nom")[0].innerHTML +
       " </option>";
-    console.log(
-      xml_doc
-        .getElementsByTagName(elements_name)
-        [idx_xml_question].getElementsByTagName("nom")[0],
-    );
   }
 }
 
@@ -63,16 +58,10 @@ function init() {
 }
 
 function dynamic_change(name) {
-  // console.log(document.getElementById("text_" + name));
-  // console.log(document.getElementById("text_" + name).value);
   localStorage.setItem(
     "_text_" + name,
     document.getElementById("text_" + name).value,
   );
-  // localStorage.setItem(
-  //   "Items", localStorage.getItem("Items")+document.get
-  // )
-  //dynamic_charge_all();
 }
 
 function dynamic_change_enums(name) {
@@ -98,19 +87,6 @@ function dynamic_charge_all() {
     }
   }
 }
-//code du nain
-// function create_exercice(d_total, groupes, equipement) {
-//   console.log("roux");
-//   let mouv_posible = [];
-//   console.log(xml_doc.getElementsByTagName("mouvement"));
-//   for (mouv in xml_doc.getElementsByTagName(cardi"mouvement")) {
-//     console.log(xml_doc.getElementsByTagName("mouvement").getAttribute("matériel"));
-//     if (equipement >= xml_doc.getElementsByTagName("mouvement")[mouv].textContent) {
-//       mouv_posible.push(mouv);
-//     }
-//   }
-//   console.log(mouv_posible);
-// }
 
 function load_page() {
   load_xml_file();
@@ -157,7 +133,9 @@ function encookization() {
 
   // competition
   setCookie(
-    "competition",
+    "competition", //document.cookie = document.cookie + cname + "=" + cvalue + ";";
+    //document.cookie = "roux=2;";
+    //document.cookie = "caca=1;";
     document.getElementById("box_competition").checked,
     10,
   );
@@ -197,7 +175,4 @@ function setCookie(cname, cvalue, exdays) {
   d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
   let expires = "expires=" + d.toUTCString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-  //document.cookie = document.cookie + cname + "=" + cvalue + ";";
-  //document.cookie = "roux=2;";
-  //document.cookie = "caca=1;";
 }
