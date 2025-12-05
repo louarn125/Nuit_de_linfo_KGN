@@ -26,18 +26,18 @@ function trie_mouvement(groupes, equipement) {
     ) {
         let temp = xml_doc.getElementsByTagName("mouvement")[idx_xml_question].getElementsByTagName("matériel")[0].textContent == "Oui";
         if (equipement >= temp) {
-            for (groupe in groupes) {
-                for (
-                    let idx_xml_groupe = 0;
-                    idx_xml_groupe < xml_doc.getElementsByTagName("mouvement")[idx_xml_question].getElementsByTagName("groupe").length;
-                    idx_xml_groupe++
-                ) {
-                    if (groupes[groupe] == xml_doc.getElementsByTagName("mouvement")[idx_xml_question].getElementsByTagName("groupe")[idx_xml_groupe].textContent) {
-                        mouv_posible.push(xml_doc.getElementsByTagName("mouvement")[idx_xml_question]);
-                    }
-                }
 
+            for (
+                let idx_xml_groupe = 0;
+                idx_xml_groupe < xml_doc.getElementsByTagName("mouvement")[idx_xml_question].getElementsByTagName("groupe").length;
+                idx_xml_groupe++
+            ) {
+                if (groupes == xml_doc.getElementsByTagName("mouvement")[idx_xml_question].getElementsByTagName("groupe")[idx_xml_groupe].textContent) {
+                    mouv_posible.push(xml_doc.getElementsByTagName("mouvement")[idx_xml_question]);
+                }
             }
+
+
 
         }
     }
@@ -57,12 +57,19 @@ function generate_exercice(d_total, mouvement_possible) {
 }
 
 function create_exercice(d_total, groupes, equipement) {
-    console.log(document.cookie);
+    groupes = getCookie("groupe_muscu_voulu");
+    d_total = parseInt(getCookie("time_train"));
+    equipement = getCookie("acces_equip");
     mouv_posible = trie_mouvement(groupes, equipement);
     console.log(generate_exercice(d_total, mouv_posible));
-
-
 }
+
+function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+}
+
 function load_page() {
     load_xml_file();
 }

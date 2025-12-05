@@ -125,6 +125,7 @@ function load_page(page) {
 
 function encookization(page) {
   //document.cookie = newCookie;
+  // console.log("cooookiii");
   if (page == "questionnaire.html") {
     // fequence current
     setCookie(
@@ -197,14 +198,22 @@ function encookization(page) {
       document.getElementById("q_next_competition").value,
       10,
     );
-  } else if (page == "exercices") {
+  } else if (page == "exercices.html") {
+    // console.log("c exo");
+    console.log(document.getElementById("time_train").value);
+    setCookie("time_train", document.getElementById("time_train").value, 10);
+
     setCookie(
-      "muscles",
+      "groupe_muscu_voulu",
       document.getElementById("select_groupe_muscu").value,
       10,
     );
 
-    setCookie("equipement", document.getElementById("temp_dispo").value, 10);
+    setCookie(
+      "acces_equip",
+      document.getElementById("select_equipement").value,
+      10,
+    );
   }
 
   //alert(document.cookie);
