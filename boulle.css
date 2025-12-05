@@ -1,0 +1,63 @@
+#boulle{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    bottom: 50px;
+    left: 50px;
+    background-color: black;
+    z-index: 999;
+}
+
+.zone{
+    position: absolute;
+    border-style: solid;
+    border-width: 1px;
+    background-color: lightsteelblue;
+    border-radius: 5px;
+}
+
+#cases{
+    position: fixed;
+    border-style: solid;
+    border-width: 1px;
+    background-color: bisque;
+    height: auto;
+    width: auto;
+    top: 5px;
+    bottom: 5px;
+    right: 5px;
+    width: 800px;
+}
+
+.valeur{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-style: solid;
+    border-width: 1px;
+    text-align: center;
+}
+
+.rangee-1{
+    top: 70%;
+}
+
+.rangee-2{
+    top: 75%;
+}
+
+#saisie{
+    position: fixed;
+    top: 5px;
+    left: 5px;
+}
+
+#obstacle{
+    position: absolute;
+    bottom: 0px;
+    left: 45%;
+    width: 10px;
+    height: 40%;
+    background-color: black;
+}
