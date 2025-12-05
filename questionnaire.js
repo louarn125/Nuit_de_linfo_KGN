@@ -205,6 +205,20 @@ function encookization(page) {
     );
 
     setCookie("equipement", document.getElementById("temp_dispo").value, 10);
+  } else if (page == "exercices.html") {
+    setCookie("time_train", document.getElementById("time_train").value, 10);
+
+    setCookie(
+      "groupe_muscu_voulu",
+      document.getElementById("select_groupe_muscu").value,
+      10,
+    );
+
+    setCookie(
+      "acces_equip",
+      document.getElementById("select_equipement").value,
+      10,
+    );
   }
 
   //alert(document.cookie);
