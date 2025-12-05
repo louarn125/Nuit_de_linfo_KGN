@@ -199,7 +199,8 @@ function encookization(page) {
       10,
     );
   } else if (page == "exercices.html") {
-    console.log("c exo");
+    // console.log("c exo");
+    console.log(document.getElementById("time_train").value);
     setCookie("time_train", document.getElementById("time_train").value, 10);
 
     setCookie(
