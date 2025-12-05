@@ -26,13 +26,11 @@ function trie_mouvement(groupes, equipement) {
     ) {
         if (equipement >= xml_doc.getElementsByTagName("mouvement")[idx_xml_question].getElementsByTagName("matériel")[0].textContent) {
             for (groupe in groupes) {
-                console.log("groupe requis: " + groupes[groupe]);
                 for (
                     let idx_xml_groupe = 0;
                     idx_xml_groupe < xml_doc.getElementsByTagName("mouvement")[idx_xml_question].getElementsByTagName("groupe").length;
                     idx_xml_groupe++
                 ) {
-                    console.log("groupe:", xml_doc.getElementsByTagName("mouvement")[idx_xml_question].getElementsByTagName("groupe")[idx_xml_groupe].textContent);
                     if (groupes[groupe] == xml_doc.getElementsByTagName("mouvement")[idx_xml_question].getElementsByTagName("groupe")[idx_xml_groupe].textContent) {
                         mouv_posible.push(xml_doc.getElementsByTagName("mouvement")[idx_xml_question]);
                     }
@@ -58,6 +56,7 @@ function generate_exercice(d_total, mouvement_possible) {
 }
 
 function create_exercice(d_total, groupes, equipement) {
+    console.log(document.cookie);
     mouv_posible = trie_mouvement(groupes, equipement);
     console.log(generate_exercice(d_total, mouv_posible));
 

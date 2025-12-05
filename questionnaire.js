@@ -2,15 +2,9 @@ let ready_htpp_request = false;
 let xml_doc;
 
 function flip_flop_name(name) {
-  // console.log("bozo");
   if (document.getElementById("box_" + name).checked) {
-    //console.log("q_" + name);
     let element_to_show = document.getElementById("q_" + name);
     element_to_show.hidden = false;
-<<<<<<< HEAD
-
-    //console.log(name, ":", xml_doc.getElementsByTagName(name));
-=======
     for (
       let idx_xml_question = 0;
       idx_xml_question < xml_doc.getElementsByTagName(name).length;
@@ -26,7 +20,6 @@ function flip_flop_name(name) {
         [idx_xml_question].getAttribute("nom") +
         " </option>";
     }
->>>>>>> questionnaire
   } else {
     document.getElementById("q_" + name).hidden = true;
   }
@@ -52,7 +45,7 @@ function append_childs(name_of_parent, elements_name) {
       ">" +
       xml_doc
         .getElementsByTagName(elements_name)
-        [idx_xml_question].getElementsByTagName("nom")[0].innerHTML +
+      [idx_xml_question].getElementsByTagName("nom")[0].innerHTML +
       " </option>";
   }
 }
