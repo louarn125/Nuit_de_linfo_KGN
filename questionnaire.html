@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="questionnaire.css" />
+        <script src="questionnaire.js"></script>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>KGN - Site Nuit de l'Info 2025</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"
+        />
+    </head>
+    <body onload="load_page('questionnaire.html')">
+        <nav
+            class="navbar navbar-expand-lg m-2"
+            data-bs-theme="light"
+            style="border-radius: 0.5rem; background-color: rgb(184, 184, 184)"
+        >
+            <div class="container-fluid">
+                <div class="justify-content-between">
+                    <div>
+                        <ul class="navbar-nav">
+                            <li class="nav-link">
+                                <a class="nav-link" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-link">
+                                <a class="nav-link" href="exercices.html"
+                                    >Exercices</a
+                                >
+                            </li>
+                            <li class="nav-link">
+                                <a class="nav-link" href="boule.html"
+                                    >Captcha</a
+                                >
+                            </li>
+
+                            <li class="nav-link" href="">
+                                <a class="nav-link">Texte de présentation</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div></div>
+                    <li class="nav-link">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                </div>
+            </div>
+        </nav>
+        <div class="box_questions">
+            <div>
+                <label for="select_frequence_current">
+                    A quelle fréquence vous entrainez-vous ?
+                </label>
+                <select id="select_frequence_current">
+                    <option selected>Selectionnez une option</option>
+                    <option value="1">Moins d'une heure par semaine</option>
+                    <option value="2">Entre 1h et 2h par semaine</option>
+                    <option value="3">Entre 2h et 3h par semaine</option>
+                    <option value="4">Entre 3h et 4h par semaine</option>
+                    <option value="5">Plus de 5h par semaine</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="select_frequence_promise">
+                    A quelle fréquence pourrez-vous vous entraîner ?
+                </label>
+                <select id="select_frequence_promise">
+                    <option selected>Selectionnez une option</option>
+                    <option value="1">Moins d'une heure par semaine</option>
+                    <option value="2">Entre 1h et 2h par semaine</option>
+                    <option value="3">Entre 2h et 3h par semaine</option>
+                    <option value="4">Entre 3h et 4h par semaine</option>
+                    <option value="5">Plus de 5h par semaine</option>
+                </select>
+            </div>
+
+            <div onchange="flip_flop_name('sport_pratique')" onchange="">
+                <label for="box_sport_pratique">
+                    Avez-vous déjà pratiquer un sport ?
+                </label>
+                <input type="checkbox" id="box_sport_pratique" />
+            </div>
+
+            <div id="q_sport_pratique" hidden="true">
+                <label for="select_q_sport_pratique"> Lequel ? </label>
+                <select
+                    id="select_q_sport_pratique"
+                    class="custom-select custom-select-sm"
+                    onload="append_childs('select_q_sport_pratique', 'sport')"
+                >
+                    <option selected>Selectionnez un sport</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="select_raison_sport"
+                    >Pourquoi voulez-vous pratiquer un sport ?</label
+                >
+                <select
+                    id="select_raison_sport"
+                    class="custom-select custom-select-sm"
+                >
+                    <option selected>Veuillez sélectionner une raison</option>
+                    <option id="1">Perdre du poids</option>
+                    <option id="2">Prendre de la masse musculaire</option>
+                    <option id="3">Se préparer pour un évenement futur</option>
+                    <option id="4">Je ne souhaite pas répondre</option>
+                </select>
+            </div>
+            <div onchange="flip_flop_name('competition')">
+                <label for="box_competition"
+                    >Avez-vous déjà participé à des compétitions ?</label
+                >
+                <input type="checkbox" id="box_competition" />
+            </div>
+
+            <div id="q_competition" hidden="true">
+                <label for="text_competition">Combien ?</label>
+                <input
+                    type="text"
+                    id="text_competition"
+                    class="form-control"
+                    placeholder="2, 1, 4..."
+                    aria-label="how many competitions?"
+                    aria-describedby="button-addon1"
+                    onchange="dynamic_change('competition')"
+                />
+                <label for="select_competition">A quel niveau ?</label>
+                <select
+                    id="select_competition"
+                    class="custom-select custom-select-sm"
+                    onchange="dynamic_change_enums('competition')"
+                >
+                    <option selected>Veuillez sélectionner une raison</option>
+                    <option id="1">Professionnel</option>
+                    <option id="2">Raisonnable</option>
+                    <option id="3">Débutant</option>
+                </select>
+            </div>
+            <div onchange="flip_flop_name('next_competition')">
+                <label for="box_next_competition">
+                    Comptez-vous participer à des compétitions prochainements ?
+                </label>
+                <input type="checkbox" id="box_next_competition" />
+            </div>
+            <div id="q_next_competition" hidden="true">
+                <label for="select_next_competition"> A quel niveau ?</label>
+                <select
+                    for="select_next_competition"
+                    class="custom-select custom-select-sm"
+                >
+                    <option selected>Veuillez selectionner un niveau</option>
+                    <option>Professionnel</option>
+                    <option>Raisonnable</option>
+                    <option>Débutant</option>
+                </select>
+            </div>
+            <button
+                class="btn btn-outline-secondary"
+                type="button"
+                id="button-addon1"
+                onclick="encookization()"
+            >
+                Sauvegarder
+            </button>
+        </div>
+    </body>
+</html>
