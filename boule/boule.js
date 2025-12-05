@@ -80,3 +80,37 @@ function Stop(){
     document.removeEventListener("mouseup", Stop);
     boulle.removeAttribute("onmousedown");
 }
+
+function AttribuerValeurs(){
+    let deja_utiliser = false;
+    let valeurs = [];
+    let temp;
+    console.log("coucou")
+    for(let i = 0; i<10; i++){
+        temp = rand(10);
+        console.log(temp)
+        for(let j = 0; j<valeurs.length; j++){
+            if(temp == valeurs[j]){
+                deja_utiliser = true
+            }
+        }
+        while(deja_utiliser == true){
+            deja_utiliser = false;
+            temp = rand(10);
+            for(let k = 0; k<valeurs.length; j++){
+                if(temp == valeurs[j]){
+                    deja_utiliser = true;
+                }
+            }
+            console.log(deja_utiliser)
+        }
+        console.log(temp)
+        valeurs.push(temp)
+        document.getElementById(""+i+"").innerHTML = String(temp);
+    }
+}
+
+
+function rand(second_intervalle){
+    return Math.trunc(Math.random()*second_intervalle);
+}
