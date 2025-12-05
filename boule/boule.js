@@ -60,7 +60,7 @@ function animation(){
     boulle.style.top = boule_y+"px";
     boulle.style.left = boule_x+"px";
     console.log(window.innerHeight);
-    if(boulle.offsetTop+boulle.offsetHeight >= window.innerHeight || boulle.offsetLeft+boulle.offsetWidth >= window.innerWidth || collision()){
+    if(boulle.offsetTop+boulle.offsetHeight >= window.innerHeight || boulle.offsetLeft+boulle.offsetWidth >= window.innerWidth){
         boulle.style.left = "50px";
         boulle.style.bottom = "50px";
         boulle.style.top = "auto";
@@ -82,31 +82,31 @@ function Stop(){
 }
 
 function AttribuerValeurs(){
-    let deja_utiliser = false;
+    let deja_utiliser;
     let valeurs = [];
     let temp;
-    console.log("coucou")
-    for(let i = 0; i<10; i++){
-        temp = rand(10);
-        console.log(temp)
+    temp = rand(10);
+    document.getElementById("0").innerHTML = temp
+    valeurs.push(temp)
+    for(let i = 1; i<10; i++){
+        deja_utiliser = false
+        temp = rand(10)
         for(let j = 0; j<valeurs.length; j++){
-            if(temp == valeurs[j]){
-                deja_utiliser = true
+            if(valeurs[j] == temp){
+                deja_utiliser = true;
             }
         }
-        while(deja_utiliser == true){
-            deja_utiliser = false;
-            temp = rand(10);
-            for(let k = 0; k<valeurs.length; j++){
-                if(temp == valeurs[j]){
+        while(deja_utiliser){
+            deja_utiliser = false
+            temp = rand(10)
+            for(let k = 0; k<valeurs.length; k++){
+                if(valeurs[k] == temp){
                     deja_utiliser = true;
                 }
             }
-            console.log(deja_utiliser)
         }
-        console.log(temp)
         valeurs.push(temp)
-        document.getElementById(""+i+"").innerHTML = String(temp);
+        document.getElementById(""+i+"").innerHTML = temp;
     }
 }
 
